@@ -1,0 +1,19 @@
+Places to run JavaScript
+##########################
+
+1. Chrome dev tools
+
+Press F12 -> Go to console.
+
+
+2. Terminal
+- Type "Powershell" in windows search option 
+- Click the poweshell icon
+- Type node to activate JS interpreter
+
+
+3. VSCode Editor
+- Create a ".js" file and write the JS code in it.
+- Save the file Ctrl + s
+- open VSCode terminal by ctrl + ~
+- Type "node filename.js" 

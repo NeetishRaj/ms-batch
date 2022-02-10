@@ -1,0 +1,56 @@
+//Full stack journey for earning more than 100,000 per month
+
+Frontend
+    HTML, Latest features in HTML5(Geolocation API, PWA, WebWorkers, Push notificatios)
+    CSS (flexbox, bootstrap, responsive designing)
+    JS (DOM, functions, objects, Array functions, Asynchronous)
+    Libraries (jQuery, EJS)
+    Framework (Angular, React, Vue)
+    Design system (Trackin theme, reading Figma or wireframe or PSD)
+    GIT and Github (PR, staging, untracked files)
+    Basic linux commands (cd, ls, cat)
+    State management (Redux)
+
+Backend (with Nodejs and Express)
+    Understand the basics and intermediate level of Nodejs (https://neetishop.medium.com/best-learning-path-to-master-nodejs-97d25d53b763)
+    HTTP/HTTPS, Cookies, CRUD and RESTful API Design
+    Express (Library work with HTTP)
+    End to End debugging (Callstack, Postman and Chrome Dev tools)
+    Security(XSS, Injections attacks, OWASP top 10)
+
+Database (MongoDB)
+    Mongo Shell
+    MongoDB basic commands (use db, i)
+    MongoDB CRUD commands (insertOne(), findOne(), update(), delete())
+    Documents based concept of MongoDB
+    Atlas
+    Cover atleast MongoDB basics (https://university.mongodb.com/courses/M001/about)
+
+CI/CD (Continous Improvement and Deployment)
+    Hosting (DNS, ANAME, CNAME, URLs)
+    Continous Integration (Code review, Github, Azure DevOps, TeamCity, CodeSignal)
+    Deployment (heroku, AWS, GCP, Azure)
+
+Architecture
+    MVC (Model View Controller) (Important)
+    Repository Pattern (Important)
+    Singleton(Important)
+    Microservices Architecture (Important)
+    CQRS
+    Factory design pattern
+
+Cloud Computing (AWS, GCP, Azure, Digital Ocean)
+    Cloud Platforms (Saas, Paas, Iaas, Dbaas, Caas)
+    Cloud computing concepts (Compute, Storage, Network and IAM)
+    Understand Pricing and most relevant solution
+
+
+
+
+
+
+//Competetive edge
+
+1. Stay updated with the new stuffs, versions, features in the MERN stack ecosystem.
+2. Website Auditing.
+3.  

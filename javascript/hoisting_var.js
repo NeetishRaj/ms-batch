@@ -15,9 +15,9 @@ function test_hoisting() {
  * Explanation : Hoisting
  * 
  * During Hoisitng for var,  compiler will look for all 
- * the var declarations inside the function body asnd will 
- * hoist them to the top og the function and initialize them 
- * with undefinde  value
+ * the var declarations inside the function body and will 
+ * hoist them to the top of the function and initialize them 
+ * with undefined value
  * 
  * function test_hoisting() {
  *     var test_var = undefined; // Done by compiler and this is called hoisting

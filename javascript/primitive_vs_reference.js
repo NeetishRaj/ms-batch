@@ -24,15 +24,15 @@ let obj1 =  {
 let obj2 = obj1; // obj2 = obj1, we do not create a fresh copy, we share the same reference
 
 console.log("obj1")
-console.log(obj1);
+console.log(obj1);//{age:28,sex:male}
 console.log("obj2")
-console.log(obj2);
+console.log(obj2);//{age:28,sex:male}
 
 console.log("After changing obj2");
 
 obj2.age = 80;
 
 console.log("obj1")
-console.log(obj1);
+console.log(obj1);//{age:80,sex:male}
 console.log("obj2")
-console.log(obj2);
+console.log(obj2);//{age:80,sex:male}

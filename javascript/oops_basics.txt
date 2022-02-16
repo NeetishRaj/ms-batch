@@ -1,9 +1,0 @@
-JS was not supposed to be an OOP language but it supported OOPS paradigm.
-
-Later on 2015 ES6 was introduced and class syntax was supported.
-
-
-In JS the support for OOPS was always there but the syntax was functional in nature.
-And here we follow prototypal inheritance.
-
-

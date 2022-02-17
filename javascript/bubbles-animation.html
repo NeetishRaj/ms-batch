@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            background: radial-gradient(lightblue, blue);
+            width: 100vw;
+            height: 100vh;
+
+            position: fixed;
+
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="bubbleBox"></canvas>
+    
+    <script>
+let ctx, W, H;
+
+class Circle {
+    constructor(x, y, radius, color, dx, dy) {
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+        this.color = color;
+        this.dx = dx;
+        this.dy = dy;
+
+        console.log(`${dx}, ${dy}`);
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.lineWidth = 1.5;
+        // ctx.strokeStyle = "white";
+        ctx.fillStyle = this.color;
+        ctx.arc(this.x, this.y, this.radius, 0,  2* Math.PI, false);
+        // ctx.stroke();
+        ctx.fill();
+    }
+
+    move() {
+        if(this.x < this.radius || this.x > (W - this.radius))
+            this.dx *= -1;
+        if(this.y < this.radius || this.y > (H - this.radius))
+            this.dy *= -1;
+        
+        this.x += this.dx;
+        this.y += this.dy;
+    }
+}
+
+class CircleFactory {
+    constructor() {
+        this.circleList = [];
+    }
+
+    createCircle(x, y, radius, color, dx, dy) {
+        const newCircle = new Circle(x, y, radius, color, dx, dy)
+        this.circleList.push(newCircle);
+    }
+
+    drawCircles() {
+        this.circleList.forEach(circle => circle.draw());
+    }
+
+    moveCircles() {
+        this.circleList.forEach(circle => circle.move());
+    }
+}
+
+function init() {
+
+    const canvas = document.getElementById('bubbleBox');
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    ctx = canvas.getContext('2d');
+
+
+    const circleFactory = new CircleFactory();
+
+    const CIRCLE_COUNT = 100;
+    const MAX_CIRCLE_RADIUS = 50;
+
+    for (let i = 0; i < CIRCLE_COUNT; i++) {
+
+        const random_X = Math.round(Math.random() * W);
+        const random_Y = Math.round(Math.random() * H);
+        const random_radius = Math.round(Math.random() * MAX_CIRCLE_RADIUS);
+
+        const random_red = Math.floor(Math.random() * 255);
+        const random_blue = Math.floor(Math.random() * 255);
+        const random_green = Math.floor(Math.random() * 255);
+        const random_color = `rgb(${random_red},${random_green},${random_blue})`;
+        
+        const random_dx =  Math.random() < 0.5 ? -1 : 1;
+        const random_dy = Math.random() < 0.5 ? -1 : 1;
+
+        circleFactory.createCircle(
+            random_X,
+            random_Y,
+            random_radius,
+            random_color,
+            random_dx,
+            random_dy);
+        
+    }
+    
+    const frame = () => {
+        ctx.clearRect(0, 0, W, H);
+        circleFactory.drawCircles();
+        circleFactory.moveCircles();
+        console.log("animation loop");
+
+        window.requestAnimationFrame(frame);
+    }
+
+    window.requestAnimationFrame(frame);
+}
+
+
+window.onload = init;
+
+    </script>
+
+</body>
+</html>

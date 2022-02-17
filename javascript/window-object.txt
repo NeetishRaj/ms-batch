@@ -1,0 +1,18 @@
+Link: https://developer.mozilla.org/en-US/docs/Web/API/Window
+
+BOM
+  Properties
+	window object
+	name
+	console
+	navigator
+	document (DOM)
+	location
+	localStorage
+	sessionStorage
+	speechSynthesis 
+	
+  Methods
+	alert()
+	requestAnimationFrame()
+	window.scroll()

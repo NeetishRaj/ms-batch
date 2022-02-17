@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text 2 Speech</title>
+
+    <style>
+        html, body, form {
+            width: 100%;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="speech">Enter text here</label>
+        <input type="text" name="speech" id="speech"><br>
+
+        <input type="submit" value="Run Speech" onsubmit="runSpeech()">
+    </form>
+
+    <script>
+        function runSpeech() {
+            const text = speech.value;
+            console.log(text);
+            window.speechSynthesis.cancel();
+            window.speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+        }
+    </script>
+</body>
+</html>

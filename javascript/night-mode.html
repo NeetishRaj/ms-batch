@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+
+        color: black;
+
+        height: 100%;
+      }
+
+
+      .wrapper {
+        background-color: #cfffff;
+        width: 500px;
+        height: 100%;
+      }
+
+      header {
+          background-color: #ffdfff;
+          height: 20vh;
+      }
+
+      main {
+          background-color: #ffffdf;
+          height: 60vh;
+
+          display: flex;
+          flex-direction: row;
+      }
+
+      aside {
+        width: 40%;
+        background-color: antiquewhite;
+      }
+
+      section {
+        width: 60%;
+      }
+
+      button {
+          position: fixed;
+          top: 10px;
+          right: 10px
+      }
+      footer {
+          height: 20vh;
+          background-color: #cfffff;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <button onclick="night_mode()">Night Mode</button>
+
+    <div class="wrapper">
+      <header>Header</header>
+
+      <main>
+        <aside>Sidebar</aside>
+
+        <section>Main content</section>
+      </main>
+
+      <footer>Footer</footer>
+    </div>
+
+<script>
+let night_mode;
+
+function init() {
+
+    const body = document.querySelector('body'); // document.body;
+    const header = document.querySelector('header');
+    const sidebar = document.querySelector('aside');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+    const button = document.querySelector('button');
+
+    let is_night_mode_off = true;
+
+
+    night_mode = () => {
+        if(is_night_mode_off) {
+            body.style.backgroundColor = "#000";
+            header.style.backgroundColor = "#001200";
+            sidebar.style.backgroundColor = "#110000";
+            main.style.backgroundColor = "#000022";
+            footer.style.backgroundColor = "#001211";
+    
+            body.style.color = "lightyellow";
+    
+            button.innerHTML= "Day Mode";
+
+            is_night_mode_off = !is_night_mode_off;
+
+        } else {
+            body.style.backgroundColor = "#fff";
+            header.style.backgroundColor = "#ffdfff";
+            sidebar.style.backgroundColor = "antiquewhite";
+            main.style.backgroundColor = "#ffffdf";
+            footer.style.backgroundColor = "#cfffff";
+    
+            body.style.color = "black";
+    
+            button.innerHTML= "Night Mode";
+
+            is_night_mode_off = !is_night_mode_off;
+        }
+    }
+
+
+}
+
+
+window.onload = init;
+
+
+</script>
+  </body>
+</html>

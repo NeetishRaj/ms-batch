@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .span-items {
+        display: inline-block;
+        width: 50px;
+        background-color: grey;
+        padding: 3px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Why study Document Object Model and it's methods?</h3>
+    <h4>
+      SO that we can dynamically create, modify or delete html and css conent.
+    </h4>
+
+    <h3>
+      <b>NOTE:</b> Always remember that you ll be able to access DOM elements only after Window has loaded
+    </h3>
+    <p>
+      For example: We are creating 50 span elements programmmatically using JS
+      below
+    </p>
+
+    <div id="spans"> 
+
+
+    </div>
+
+<script>
+function init() {
+    // Now window has loaded and we can do DOM manipulations
+
+    // We are accessing the Element object for <div id="spans"> </div>
+    const spans_div = document.querySelector("#spans");
+
+    spans_div.style.border = "10px solid black";
+    spans_div.style.borderRadius = "20px";
+
+    // Create 50 span elements
+    for (let i = 0; i < 50; i++) {
+        
+        //create a span tag
+        const span = document.createElement('span');
+
+
+        //now place the span tag inside  <div id="spans"></div>
+        spans_div.appendChild(span)
+
+
+        // Now let's add text inside the span elemnet
+        const textNode = document.createTextNode(`this is span text `);
+        // Add this text inside the span element
+        span.appendChild(textNode);
+
+        span.setAttribute('class', 'span-items');
+
+        
+    }
+
+}
+
+
+
+
+window.onload = init;
+</script>
+  </body>
+</html>

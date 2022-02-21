@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grand-parent {
+            height: 150px;
+            width: 150px;
+    
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="grand-parent" tabIndex="0"></div>
+<script>
+
+
+function init() {
+    const grandParent = document.querySelector('.grand-parent');
+    grandParent.focus(); 
+
+    grandParent.addEventListener('click', () => {
+        console.log('Mouse click happened');
+    });
+
+    grandParent.addEventListener('mouseover', () => {
+        console.log('Mouse over happened');
+    });
+
+    grandParent.addEventListener('mousemove', (event) => {
+        console.log('Mouse move happened');
+
+        // console.log(`x:${event.clientX}, y: ${event.clientY}`)
+    });
+
+    grandParent.addEventListener('keydown', (event) => {
+        console.log("Key pressed");
+        console.log(`Key pressed: ${event.keyCode}`);
+    })
+
+
+}
+
+window.onload = init;
+</script>
+</body>
+</html>

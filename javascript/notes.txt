@@ -1,0 +1,17 @@
+Events in JS
+    https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
+
+    Element.addEventListener()
+    Element.onclick (Event handler properties)
+    addEventListener vs event handlerproperty
+    Inline eventhandlers
+
+
+    Event types
+        https://developer.mozilla.org/en-US/docs/Web/Events
+
+        onload
+        mouseevents (click, mouseover, dblclick, contextmenu)
+
+    EventCapture Vs EventBubbling
+    https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener

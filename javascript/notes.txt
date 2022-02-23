@@ -1,7 +1,12 @@
-Asynchronous vs Synchronous programming in JS
-setTimeout()
-setInterval()
+Prototypes
+    revision
+    
+Object
+    Getters-Setters
+    Get: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get
+    Set: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
 
+    copying objects (Deep copy vs shallow copy)
+    https://neetishop.medium.com/copying-objects-in-javascript-8590e2d45c4
 
-1. StopWatch
-2. OnlineEditor
+    

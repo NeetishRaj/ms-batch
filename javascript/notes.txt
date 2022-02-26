@@ -1,6 +1,13 @@
-Asynchronous programming
+JSON
+    JSON data types
+    JSON.stringify()
+    JSON.parse()
+    CSR VS SSR
 
+AJAX
+    Fetch
 
-callbacks
-
-promises
+Promises continued
+    resolve
+    reject
+    waiting

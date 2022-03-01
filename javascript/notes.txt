@@ -1,0 +1,16 @@
+ES6 features
+    - http://es6-features.org/
+    - Destructuring(Object and Array)
+    - Computed Property names
+    - Method properties
+    - Default parameter, rest(...)
+    - spread operator (...)
+
+Object methods
+    - Object.hasOwnProperty()
+    - Object.create()
+    - Object.entries(), Object.keys() and Object.values()
+    - Object.freeze(), Object.isFrozen()
+    - Object.assign()
+
+

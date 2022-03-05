@@ -1,4 +1,5 @@
-- Ajax(XMLHTTPRequest, jQuery.ajax(), fetch()) background
-- Try-Catch
-- Async-Await
-- Decorators
+Debugging of JS in VS-CODE vs Chrome
+- break  points
+- scopes
+- Conditional breakpoints
+- doing the same in Chrome

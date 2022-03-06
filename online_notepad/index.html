@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background-color: white;
+            width: 100vw;
+            height: 100vh;
+
+            padding: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-self: center;
+
+            position: fixed;
+        }
+
+        .container .editor-container {
+            width:  80vw;
+            height: 80vh;
+
+            position: relative;
+        }
+
+        .container .editor-container textarea{
+            width:  80vw;
+            height: 80vh;
+
+            padding-top: 30px;
+
+            box-sizing: border-box;
+
+            overflow: scroll;
+        }
+
+        .editor-container .heading-bar {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+
+            width: calc(100% - 12px);
+
+            background-color: lightgrey;
+            padding: 5px;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .editor-container .heading-bar .feature-flag {
+            display: flex;
+            align-items:center
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="editor-container">
+            <div class="heading-bar">
+
+                <span class="header">
+                    Online Notepad
+                </span>
+
+                <span class="feature-flag">
+                    <label for="saveNotes">
+                        Save My Notes
+                    </label>
+                    <input type="checkbox" name="saveNotes" id="saveNotesCheckbox">
+                </span>
+            </div>
+            <textarea name="" id="editor" cols="30" rows="10" placeholder="Write your notes here"></textarea>
+        </div>
+
+<script>
+window.onload = init;
+
+
+function init() {
+    editor.value = window.localStorage.getItem('autosave-data');
+
+    setInterval(() => {
+       if(saveNotesCheckbox.checked) {
+           window.localStorage.setItem('autosave-data', editor.value);
+       }    
+    }, 1000);
+}
+
+
+</script>
+    </div>
+</body>
+</html>

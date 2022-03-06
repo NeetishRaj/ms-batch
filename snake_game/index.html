@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body, html {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+        }
+
+        #gameContainer {
+            background-color: black;
+            height: 400px;
+            width: 400px;
+
+            position: relative;
+        }
+
+        .pixel {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+
+            border-radius: 50%;
+        }
+
+        .snake {
+            background-color: #44ea45;
+        }
+
+        .food {
+            background-color: #6871cc;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <span class=""></span>
+    </div>
+    <h1>Your Score: <span id="score">0</span></h1>
+
+<script>
+
+window.onload = init;
+let food, snake = []; 
+
+class SnakeCell {
+    constructor(elem, dir = "left") {
+        this.elem = elem;
+        this.dir = dir;
+    }
+}
+
+function start_game() {
+    // create a food at random location
+    food = document.createElement('SPAN')
+    food.setAttribute('class', 'pixel food')
+    food.style.left = Math.floor(Math.random() * 40) * 10 + 'px';
+    food.style.top = Math.floor(Math.random() * 40) * 10 + 'px';
+    gameContainer.appendChild(food);
+
+    // create a moving snake at 20 th row moving left
+    const snake_head = document.createElement('SPAN')
+    snake_head.setAttribute('class', 'pixel snake')
+    snake_head.style.left = '300px';
+    snake_head.style.top = '200px';
+    gameContainer.appendChild(snake_head);
+
+    snake.push(new SnakeCell(snake_head, "left"));
+
+    setInterval(() => {
+        move_snake();
+    }, 100)
+    
+}
+
+function move_snake() {
+   // console.log("Snake is moving!");
+    snake.forEach(cell => {
+        switch (cell.dir) {
+            case 'left':
+                const current_left = parseInt(cell.elem.style.left);
+                cell.elem.style.left = `${current_left - 10}px`;
+                break;
+        
+            default:
+                break;
+        }
+    })
+}
+
+function change_snake_direction(dir) {
+    console.log(dir);
+}
+
+function init()  {
+    
+    start_game();
+
+
+    // Arrow Left = 37
+    // Arrow up = 38
+    // Arrow right = 39
+    // Arrow down = 40
+
+    window.onkeydown = (e) => {
+        console.log(e.keyCode);
+
+        switch (e.keyCode) {
+            case 37: change_snake_direction('left');
+                break;
+            case 38: change_snake_direction('up');
+                break;
+            case 39: change_snake_direction('right');
+                break;
+            case 40: change_snake_direction('down');
+                break;
+            default: change_snake_direction('left');
+                break;
+        }
+    }
+}
+
+
+
+</script>
+    
+</body>
+</html>

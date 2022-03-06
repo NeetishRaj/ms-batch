@@ -1,0 +1,1 @@
+console.log("This is the main starting point of the application")

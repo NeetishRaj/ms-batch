@@ -1,0 +1,19 @@
+{
+  "name": "first_nodejs_project",
+  "version": "1.0.0",
+  "description": "It's my first nodejs project where I ll be using external packages using npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "first",
+    "nodejs",
+    "project"
+  ],
+  "author": "Neetish Raj",
+  "license": "ISC",
+  "dependencies": {
+    `"json-server": "^0.17.0"`
+  }
+}

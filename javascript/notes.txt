@@ -1,5 +1,16 @@
-Debugging of JS in VS-CODE vs Chrome
-- break  points
-- scopes
-- Conditional breakpoints
-- doing the same in Chrome
+Nodejs https://nodejs.org/en/docs/
+    - Architecture (V8 and libuv)
+    - process
+    - environment variables in OS
+    - CLI
+    - native libraries
+    - NPM
+
+HTTP
+    - Basics https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+    - 4 basic HTTP methods (GET, POST, PUT, DELETE) 
+    - CRUD (Create  POST, Read- GET, Update- PUT and Delete - DELETE)
+
+Postman
+    -Simple Nodejs Server (GET, PUT, POST, DELETE)
+

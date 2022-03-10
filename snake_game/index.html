@@ -48,52 +48,98 @@
 <script>
 
 window.onload = init;
-let food, snake = []; 
+let score = 0, food, interval;
+
+const Food = {
+    elem: undefined,
+    x: undefined,
+    y: undefined,
+    create() {
+        this.elem = document.createElement('SPAN');
+        this.elem.setAttribute('class', 'pixel food');
+        this.move();
+        gameContainer.appendChild(this.elem);
+    },
+    move() {
+        this.x = Math.floor(Math.random() * 40) * 10;
+        this.y = Math.floor(Math.random() * 40) * 10;
+
+        this.elem.style.left = this.x + 'px';
+        this.elem.style.top = this.y + 'px';
+    }
+}
+
+const Snake = {
+    cells: [],
+    move() {
+        this.cells.forEach(cell => {
+            cell.move();
+        })
+    },
+    eat(x, y) {
+        const snake_head = this.cells[0];
+        this.cells.unshift(new SnakeCell(snake_head.dir, x, y));
+        Food.move();
+    }
+    
+}
 
 class SnakeCell {
-    constructor(elem, dir = "left") {
-        this.elem = elem;
+    constructor(dir = "left", x, y) {
         this.dir = dir;
+        this.x = x;
+        this.y = y;
+
+        this.elem = document.createElement('SPAN');
+        this.elem.setAttribute('class', 'pixel snake')
+        this.elem.style.left = this.x + 'px';
+        this.elem.style.top = this.y + 'px';
+        gameContainer.appendChild(this.elem);
+    }
+
+    move() {
+        if(this.x <= 0 || this.x >= 400 || this.y <= 0 || this.y >= 400) {
+            stop_game();
+            return;
+        }
+
+        switch (this.dir) {
+            case 'left': this.x -= 10;
+                break;
+            case 'up': this.y -= 10;
+                break;
+            case 'right': this.x += 10;
+                break;
+            case 'down': this.y += 10;
+                break;
+            default:
+                break;
+        }
+
+        this.elem.style.left = `${this.x}px`;
+        this.elem.style.top = `${this.y}px`;
     }
 }
 
 function start_game() {
     // create a food at random location
-    food = document.createElement('SPAN')
-    food.setAttribute('class', 'pixel food')
-    food.style.left = Math.floor(Math.random() * 40) * 10 + 'px';
-    food.style.top = Math.floor(Math.random() * 40) * 10 + 'px';
-    gameContainer.appendChild(food);
+    Food.create();
 
     // create a moving snake at 20 th row moving left
-    const snake_head = document.createElement('SPAN')
-    snake_head.setAttribute('class', 'pixel snake')
-    snake_head.style.left = '300px';
-    snake_head.style.top = '200px';
-    gameContainer.appendChild(snake_head);
+    Snake.cells.push(new SnakeCell("left", 300, 200));
+    Snake.eat(310, 200);
+    Snake.eat(320, 200);
 
-    snake.push(new SnakeCell(snake_head, "left"));
-
-    setInterval(() => {
-        move_snake();
+    interval = setInterval(() => {
+        Snake.move();
     }, 100)
     
 }
 
-function move_snake() {
-   // console.log("Snake is moving!");
-    snake.forEach(cell => {
-        switch (cell.dir) {
-            case 'left':
-                const current_left = parseInt(cell.elem.style.left);
-                cell.elem.style.left = `${current_left - 10}px`;
-                break;
-        
-            default:
-                break;
-        }
-    })
+function stop_game() {
+    clearInterval(interval);
 }
+
 
 function change_snake_direction(dir) {
     console.log(dir);
@@ -104,14 +150,11 @@ function init()  {
     start_game();
 
 
-    // Arrow Left = 37
-    // Arrow up = 38
-    // Arrow right = 39
-    // Arrow down = 40
-
     window.onkeydown = (e) => {
-        console.log(e.keyCode);
-
+        // Arrow key Left = 37
+        // Arrow key up = 38
+        // Arrow key right = 39
+        // Arrow key down = 40
         switch (e.keyCode) {
             case 37: change_snake_direction('left');
                 break;

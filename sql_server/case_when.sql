@@ -1,6 +1,14 @@
+-- CASE-WHEN
+-- WAQ to create a separate column 'QuotaFulfilled' where we categorize OrderDetails in two cases
+-- WHEN Quantity > 30 , then 'True'
+-- ELSE, then 'False'
+
 SELECT OrderID, Quantity,
-CASE WHEN Quantity > 30 THEN 'The quantity is greater than 30'
-WHEN Quantity = 30 THEN 'The quantity is 30'
-ELSE 'The quantity is under 30'
-END AS QuantityText
+CASE
+	WHEN Quantity > 30 THEN 'TRUE'
+	WHEN Quantity = 30 THEN 'TRUE'
+	ELSE 'FALSE'
+END AS QuotaFulfilled
+
+
 FROM OrderDetails;

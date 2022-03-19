@@ -48,7 +48,7 @@
 
 
 -- RIGHT Join
--- Write an SQL query to return all records from the right table (Employees), even if there are no matches in the left table.
+-- Write an SQL query to return all records from the right table (Employees), even if there are no matches in the left table (Orders).
 --SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
 --FROM Orders
 --RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
@@ -58,8 +58,7 @@
 -- Full OUTER JOIN | OUTER JOIN
 -- WAQ to select all Customers and all Orders
 --SELECT Customers.CustomerName, Orders.OrderID
---FROM Customers
---FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+--FROM Customers FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
 --ORDER BY Customers.CustomerName;
 
 
@@ -68,6 +67,7 @@
 -- WAQ to find the customers belonging to the same city.
 --SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
 --FROM Customers A, Customers B
---WHERE A.CustomerID <> B.CustomerID
+--WHERE A.CustomerID != B.CustomerID
 --AND A.City = B.City
 --ORDER BY A.City;
+

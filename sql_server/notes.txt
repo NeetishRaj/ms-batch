@@ -1,0 +1,8 @@
+- DISTINCT()
+- GROUP BY
+- WHERE (=, >, <, >=, <=, !=, BETWEEN, LIKE, IN - short of OR)
+- WHERE column_name IS NULL | IS NOT NULL;
+- UPDATE table SET column1=value, column2=value2;
+- Multiple tables (JOINS, INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, SELF JOIN)
+- CASE WHEN
+- 

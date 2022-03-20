@@ -34,5 +34,5 @@
 -- Utilize 'Products' and 'OrderDetails' to get this info.
 -- Example
 -- ProductID        ProductName     Total Units Sold
--- 1                Chang           280
+-- 2               Changs           280
 

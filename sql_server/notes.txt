@@ -1,0 +1,36 @@
+- DISTINCT()
+- GROUP BY
+- WHERE (=, >, <, >=, <=, !=, BETWEEN, LIKE, IN - short of OR)
+- WHERE column_name IS NULL | IS NOT NULL;
+- UPDATE table SET column1=value, column2=value2;
+- Multiple tables (JOINS, INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, SELF JOIN)
+- CASE WHEN
+- Assignment 1
+- Transactions (Commit and Rollover)
+- TRIGGERS and Stored Procedures
+- Relations (1 -1, 1 - many, many-many)
+- Normalization - https://beginnersbook.com/2015/05/normalization-in-dbms/ 
+- Miscellaneous 
+    - Queries vs commands concept 
+        Query - no change to DB ,Example - SELECT Queries
+        Command - will change DB, DELETE, UPDATE, INSERT
+    - VIEW, 
+    - Indexing 
+    - Sharding
+    - ACID - https://mariadb.com/resources/blog/acid-compliance-what-it-means-and-why-you-should-care/
+- Assignment 2
+
+
+
+Top Interview questions
+
+1. Alter vs Insert
+2. SQL Queries 
+3. Group By 
+4. Triggers Vs Stored Procedures
+5. SELF JOIN, 
+6. Normalization (1NF, 2NF, 3NF, BCNF)
+
+Data Science Or Data Engineer
+
+https://lnkd.in/dEWqJ7Kb
